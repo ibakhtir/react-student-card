@@ -3,15 +3,16 @@ import { useHistory } from "react-router-dom";
 
 import TextField from "../../form/textField";
 
-const CreatePage = () => {
-  const [data, setData] = useState({
-    name: "",
-    surname: "",
-    dateOfBirth: "",
-    portfolio: "",
-  });
+const EditPage = () => {
+  const student = JSON.parse(localStorage.getItem("student"));
+
+  const [data, setData] = useState(student || {});
 
   const history = useHistory();
+
+  const handleClick = () => {
+    history.push("/student");
+  };
 
   const handleChange = (target) => {
     setData((prevState) => ({
@@ -57,12 +58,19 @@ const CreatePage = () => {
           value={data.portfolio}
           onChange={handleChange}
         />
+        <button
+          className="btn btn-secondary"
+          type="button"
+          onClick={handleClick}
+        >
+          Назад
+        </button>
         <button className="btn btn-primary" type="submit">
-          Создать
+          Обновить
         </button>
       </form>
     </div>
   );
 };
 
-export default CreatePage;
+export default EditPage;
