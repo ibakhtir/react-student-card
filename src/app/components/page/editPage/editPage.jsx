@@ -54,8 +54,8 @@ const EditPage = () => {
         <TextField
           type="text"
           label="Портфолио"
-          name="portfolio"
-          value={data.portfolio}
+          name="website"
+          value={data.website}
           onChange={handleChange}
         />
         <button

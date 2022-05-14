@@ -21,7 +21,9 @@ const StudentPage = () => {
             <p>Имя: {student.name}</p>
             <p>Фамилия: {student.surname}</p>
             <p>Год рождения: {student.dateOfBirth}</p>
-            <p>Портфолио: {student.portfolio}</p>
+            <p>
+              Портфолио: <a href={student.website}>{student.website}</a>{" "}
+            </p>
           </div>
         ) : (
           <p>Нет данных</p>
